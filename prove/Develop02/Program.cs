@@ -50,7 +50,7 @@ class Program
         Console.WriteLine("Write");
         Entry entry = new Entry();
         entry.EntryInput();
-        journal.entries.Add(entry);
+        journal._entries.Add(entry);
     }
     static void Display(Journal journal){
        Console.WriteLine("Display"); 
@@ -59,7 +59,7 @@ class Program
     static void Load(Journal journal){
         Console.WriteLine("Load. Type the filename: ");
 
-        journal.entries.Clear();
+        journal._entries.Clear();
 
         string filename = Console.ReadLine();
         string[] lines = System.IO.File.ReadAllLines(filename);
@@ -68,11 +68,11 @@ class Program
         {
             string[] parts = line.Split(",");
             Entry entry = new Entry();
-            entry.currentDate = parts[0];
-            entry.prompt = parts[1];
-            entry.response = parts[2];
-            entry.signature = parts[3];
-            journal.entries.Add(entry);
+            entry._currentDate = parts[0];
+            entry._prompt = parts[1];
+            entry._response = parts[2];
+            entry._signature = parts[3];
+            journal._entries.Add(entry);
         }
 
     }
@@ -84,8 +84,8 @@ class Program
         using (StreamWriter outputFile = new StreamWriter(filename))
         {
 
-            foreach (Entry entry in journal.entries){
-                outputFile.WriteLine(entry.currentDate + "," + entry.prompt + "," + entry.response + "," + entry.signature);
+            foreach (Entry entry in journal._entries){
+                outputFile.WriteLine(entry._currentDate + "," + entry._prompt + "," + entry._response + "," + entry._signature);
             }
 
             // You can add text to the file with the WriteLine method
