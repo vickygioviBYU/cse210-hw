@@ -43,4 +43,15 @@ public class ListingActivity : Activity
         ActivityInstructions();
         // Set other values here that are unique to the Reflecting Activity
     }
+
+    public ListingActivity(int duration)
+    {
+        _name = "Listing Activity";
+        _desc = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+        _duration = duration;
+
+        
+        ActivityInstructions();
+        // Set other values here that are unique to the Reflecting Activity
+    }
 }

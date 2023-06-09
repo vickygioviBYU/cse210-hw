@@ -35,4 +35,16 @@ public class BreathingActivity : Activity
 
         // Set other values here that are unique to the Reflecting Activity
     }
+
+    public BreathingActivity(int duration)
+    {
+        _name = "Breathing Activity";
+        _desc = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
+        _duration = duration;
+
+        
+        ActivityInstructions();
+
+        // Set other values here that are unique to the Reflecting Activity
+    }
 }
