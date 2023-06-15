@@ -1,0 +1,4 @@
+0
+SimpleGoal:asdf,asdf,100,False
+EternalGoal:asdf,asdf,100
+ChecklistGoal:asf,asf,100,500,3,0
