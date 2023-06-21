@@ -2,6 +2,17 @@ using System;
 
 public class ListingActivity : Activity
 {
+    private Stopwatch _sw = new Stopwatch();
+    private double _lastFrame;
+
+    private double DeltaTime()
+    {
+        TimeSpan ts = this._sw.Elapsed();
+        double firstFrame = ts.TotalMilliseconds;
+        double dt = firstFrame - _lastFrame;
+        this._lastFrame = ts.TotalMilliseconds;
+        return dt;
+    }
     private List<string> prompts = new List<string>() {
         "Who are people that you appreciate?",
         "What are personal strengths of yours?",
@@ -26,10 +37,40 @@ public class ListingActivity : Activity
         Console.WriteLine(prompts[num]);
         Animation();
         Console.WriteLine();
-        while (!VerifyStopwatch()) {
-            string newResponse = Console.ReadLine();
-            responses.Add(newResponse);
+
+        this._sw.Start();
+
+        double acc = 0.0;
+
+        List<string> buf = new List<string>();
+
+        Console.WriteLine("Go!");
+
+        while (acc <= _duration * 1000)
+        {
+            acc += DeltaTime();
+            if (!Console.KeyAvailable)
+            {
+                continue;
+            }
+            ConsoleKeyInfo key = Console.ReadKey();
+            if (key.Key == ConsoleKey.Enter)
+            {
+                Console.WriteLine("");
+                buf.Add("\n");
+            }
+            else
+            {
+                buf.Add(key.KeyChar.ToString());
+            }
         }
+        Console.WriteLine("\nTime's up!");
+        string bufStr = String.Join<string>("", buf);
+        Console.WriteLine($"Here's what you typed: {bufStr}");
+
+        // string newResponse = Console.ReadLine();
+        // responses.Add(newResponse);
+
         Console.WriteLine("Items entered: " + responses.Count);     
     }
 
