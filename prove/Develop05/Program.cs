@@ -13,9 +13,16 @@ class Program
 
         while (option != 6) {
 
+            Console.WriteLine();
+
             Console.WriteLine("You have " + goalManager.getPoints() + " points.");
 
+            Console.WriteLine();
+
+
             Console.WriteLine("Menu Options: ");
+
+            Console.WriteLine();
 
             Console.WriteLine("1. Create New Goal");
             Console.WriteLine("2. List Goals");
@@ -25,15 +32,22 @@ class Program
             Console.WriteLine("6. Quit");
             Console.WriteLine("7. Load Index of Files");
 
+            Console.WriteLine();
+
             Console.WriteLine("Select a Choice from the Menu: ");
 
+            Console.WriteLine();
+
             option = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
 
             if (option == 1) {
                 Console.WriteLine("The types of goals are: ");
                 Console.WriteLine("1. Simple Goal");
                 Console.WriteLine("2. Eternal Goal");
                 Console.WriteLine("3. Checklist Goal");
+                Console.WriteLine();
                 int selectGoal = int.Parse(Console.ReadLine());
                 if (selectGoal == 1) {
                     Console.Write("Name of your goal: ");
