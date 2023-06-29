@@ -3,6 +3,7 @@ using Commons.Music.Midi;
 
 class MIDIMessage
 {
+    private int _noteNumber;
     private byte _byteTypeMessage;
     private byte _byteNote;
     private int _deltaTime;
@@ -11,8 +12,13 @@ class MIDIMessage
     public int GetDelta() {
         return _deltaTime;
     }
+
+    public int GetNoteNumber() {
+        return _noteNumber;
+    }
     
-    public MIDIMessage(byte byteTypeMessage, byte byteNote, int deltaTime, IMidiOutput output){
+    public MIDIMessage(int noteNumber, byte byteTypeMessage, byte byteNote, int deltaTime, IMidiOutput output){
+        _noteNumber = noteNumber;
         _byteTypeMessage = byteTypeMessage;
         _byteNote = byteNote;
         _deltaTime = deltaTime;

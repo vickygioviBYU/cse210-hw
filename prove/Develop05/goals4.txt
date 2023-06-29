@@ -1,0 +1,4 @@
+0
+SimpleGoal:NAme1,NAme1,100,False
+EternalGoal:NAme2,NAme2,200
+ChecklistGoal:Name3,Name3,300,500,3,0
