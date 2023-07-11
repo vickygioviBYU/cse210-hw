@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-class TypeNoteManager
+public class TypeNoteManager
 {
     private List<TypeNote> _types;
     public TypeNoteManager(int blackNoteDuration) {

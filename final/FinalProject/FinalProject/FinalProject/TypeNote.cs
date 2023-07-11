@@ -1,4 +1,4 @@
-class TypeNote
+public class TypeNote
 {
     private string _name;
     private int _number;

@@ -31,28 +31,28 @@ namespace FinalProject
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnAddBeat = new System.Windows.Forms.Button();
+            this.tBlackNote = new System.Windows.Forms.TextBox();
+            this.tDuration = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.tBeatNumber = new System.Windows.Forms.TextBox();
+            this.btnDeleteBeat = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAddNote = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tPitch = new System.Windows.Forms.TextBox();
+            this.cbNote = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tBeatNumber2 = new System.Windows.Forms.TextBox();
+            this.tNoteNumber = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnDeleteNote = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tTime = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -66,28 +66,29 @@ namespace FinalProject
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button1
+            // btnAddBeat
             // 
-            this.button1.Location = new System.Drawing.Point(222, 95);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 31);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Add Beat";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddBeat.Location = new System.Drawing.Point(222, 95);
+            this.btnAddBeat.Name = "btnAddBeat";
+            this.btnAddBeat.Size = new System.Drawing.Size(100, 31);
+            this.btnAddBeat.TabIndex = 1;
+            this.btnAddBeat.Text = "Add Beat";
+            this.btnAddBeat.UseVisualStyleBackColor = true;
+            this.btnAddBeat.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // tBlackNote
             // 
-            this.textBox1.Location = new System.Drawing.Point(152, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 20);
-            this.textBox1.TabIndex = 2;
+            this.tBlackNote.Location = new System.Drawing.Point(152, 43);
+            this.tBlackNote.Name = "tBlackNote";
+            this.tBlackNote.Size = new System.Drawing.Size(170, 20);
+            this.tBlackNote.TabIndex = 2;
             // 
-            // textBox2
+            // tDuration
             // 
-            this.textBox2.Location = new System.Drawing.Point(152, 69);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(170, 20);
-            this.textBox2.TabIndex = 3;
+            this.tDuration.Location = new System.Drawing.Point(152, 69);
+            this.tDuration.Name = "tDuration";
+            this.tDuration.Size = new System.Drawing.Size(170, 20);
+            this.tDuration.TabIndex = 3;
             // 
             // label2
             // 
@@ -121,21 +122,22 @@ namespace FinalProject
             this.label4.Text = "Beat Number";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // textBox3
+            // tBeatNumber
             // 
-            this.textBox3.Location = new System.Drawing.Point(152, 132);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(170, 20);
-            this.textBox3.TabIndex = 6;
+            this.tBeatNumber.Location = new System.Drawing.Point(152, 132);
+            this.tBeatNumber.Name = "tBeatNumber";
+            this.tBeatNumber.Size = new System.Drawing.Size(170, 20);
+            this.tBeatNumber.TabIndex = 6;
             // 
-            // button2
+            // btnDeleteBeat
             // 
-            this.button2.Location = new System.Drawing.Point(222, 158);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 31);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Delete Beat";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDeleteBeat.Location = new System.Drawing.Point(222, 158);
+            this.btnDeleteBeat.Name = "btnDeleteBeat";
+            this.btnDeleteBeat.Size = new System.Drawing.Size(100, 31);
+            this.btnDeleteBeat.TabIndex = 8;
+            this.btnDeleteBeat.Text = "Delete Beat";
+            this.btnDeleteBeat.UseVisualStyleBackColor = true;
+            this.btnDeleteBeat.Click += new System.EventHandler(this.btnDeleteBeat_Click);
             // 
             // panel1
             // 
@@ -145,14 +147,15 @@ namespace FinalProject
             this.panel1.TabIndex = 9;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // button3
+            // btnAddNote
             // 
-            this.button3.Location = new System.Drawing.Point(12, 261);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(151, 23);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Add Note";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAddNote.Location = new System.Drawing.Point(12, 261);
+            this.btnAddNote.Name = "btnAddNote";
+            this.btnAddNote.Size = new System.Drawing.Size(151, 23);
+            this.btnAddNote.TabIndex = 10;
+            this.btnAddNote.Text = "Add Note";
+            this.btnAddNote.UseVisualStyleBackColor = true;
+            this.btnAddNote.Click += new System.EventHandler(this.btnAddNote_Click);
             // 
             // label5
             // 
@@ -174,17 +177,17 @@ namespace FinalProject
             this.label6.TabIndex = 13;
             this.label6.Text = "Pitch";
             // 
-            // textBox5
+            // tPitch
             // 
-            this.textBox5.Location = new System.Drawing.Point(152, 301);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(170, 20);
-            this.textBox5.TabIndex = 11;
+            this.tPitch.Location = new System.Drawing.Point(152, 301);
+            this.tPitch.Name = "tPitch";
+            this.tPitch.Size = new System.Drawing.Size(170, 20);
+            this.tPitch.TabIndex = 11;
             // 
-            // comboBox1
+            // cbNote
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbNote.FormattingEnabled = true;
+            this.cbNote.Items.AddRange(new object[] {
             "Round Note",
             "Half Note",
             "Quarter Note",
@@ -192,10 +195,10 @@ namespace FinalProject
             "Semiquaver Note",
             "Fuse",
             "Semifuse"});
-            this.comboBox1.Location = new System.Drawing.Point(152, 327);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(170, 21);
-            this.comboBox1.TabIndex = 15;
+            this.cbNote.Location = new System.Drawing.Point(152, 327);
+            this.cbNote.Name = "cbNote";
+            this.cbNote.Size = new System.Drawing.Size(170, 21);
+            this.cbNote.TabIndex = 15;
             // 
             // label7
             // 
@@ -217,19 +220,19 @@ namespace FinalProject
             this.label8.TabIndex = 18;
             this.label8.Text = "Beat Number";
             // 
-            // textBox4
+            // tBeatNumber2
             // 
-            this.textBox4.Location = new System.Drawing.Point(152, 381);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(170, 20);
-            this.textBox4.TabIndex = 19;
+            this.tBeatNumber2.Location = new System.Drawing.Point(152, 381);
+            this.tBeatNumber2.Name = "tBeatNumber2";
+            this.tBeatNumber2.Size = new System.Drawing.Size(170, 20);
+            this.tBeatNumber2.TabIndex = 19;
             // 
-            // textBox6
+            // tNoteNumber
             // 
-            this.textBox6.Location = new System.Drawing.Point(152, 407);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(170, 20);
-            this.textBox6.TabIndex = 20;
+            this.tNoteNumber.Location = new System.Drawing.Point(152, 407);
+            this.tNoteNumber.Name = "tNoteNumber";
+            this.tNoteNumber.Size = new System.Drawing.Size(170, 20);
+            this.tNoteNumber.TabIndex = 20;
             // 
             // label9
             // 
@@ -241,14 +244,15 @@ namespace FinalProject
             this.label9.TabIndex = 21;
             this.label9.Text = "Note Number";
             // 
-            // button4
+            // btnDeleteNote
             // 
-            this.button4.Location = new System.Drawing.Point(171, 261);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(151, 23);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "Delete Note";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnDeleteNote.Location = new System.Drawing.Point(171, 261);
+            this.btnDeleteNote.Name = "btnDeleteNote";
+            this.btnDeleteNote.Size = new System.Drawing.Size(151, 23);
+            this.btnDeleteNote.TabIndex = 22;
+            this.btnDeleteNote.Text = "Delete Note";
+            this.btnDeleteNote.UseVisualStyleBackColor = true;
+            this.btnDeleteNote.Click += new System.EventHandler(this.btnDeleteNote_Click);
             // 
             // label10
             // 
@@ -260,40 +264,40 @@ namespace FinalProject
             this.label10.Text = "Notes";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox7
+            // tTime
             // 
-            this.textBox7.Location = new System.Drawing.Point(152, 355);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(170, 20);
-            this.textBox7.TabIndex = 24;
+            this.tTime.Location = new System.Drawing.Point(152, 355);
+            this.tTime.Name = "tTime";
+            this.tTime.Size = new System.Drawing.Size(170, 20);
+            this.tTime.TabIndex = 24;
             // 
             // EditUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 448);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.tTime);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnDeleteNote);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tNoteNumber);
+            this.Controls.Add(this.tBeatNumber2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbNote);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.tPitch);
+            this.Controls.Add(this.btnAddNote);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnDeleteBeat);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tBeatNumber);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.tDuration);
+            this.Controls.Add(this.tBlackNote);
+            this.Controls.Add(this.btnAddBeat);
             this.Controls.Add(this.label1);
             this.Location = new System.Drawing.Point(950, 25);
             this.Name = "EditUI";
@@ -308,27 +312,27 @@ namespace FinalProject
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btnAddBeat;
+        private System.Windows.Forms.TextBox tBlackNote;
+        private System.Windows.Forms.TextBox tDuration;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox tBeatNumber;
+        private System.Windows.Forms.Button btnDeleteBeat;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAddNote;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox tPitch;
+        private System.Windows.Forms.ComboBox cbNote;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tBeatNumber2;
+        private System.Windows.Forms.TextBox tNoteNumber;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnDeleteNote;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tTime;
     }
 }

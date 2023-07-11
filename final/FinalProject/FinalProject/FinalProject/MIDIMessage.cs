@@ -1,7 +1,7 @@
 using System;
 using Commons.Music.Midi;
 
-class MIDIMessage
+public class MIDIMessage
 {
     private int _noteNumber;
     private byte _byteTypeMessage;

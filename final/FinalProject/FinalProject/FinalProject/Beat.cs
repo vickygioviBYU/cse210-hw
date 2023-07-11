@@ -1,11 +1,26 @@
 using Commons.Music.Midi;
+using FinalProject;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
-class Beat
+public class Beat
 {
+    public List<MIDIMessage> GetMessages()
+    {
+        return _messages;
+    }
     private List<Note> _notes;
+
+    public int QuantityNotes()
+    {
+        return _notes.Count;
+    }
+
+    public List<Note> GetNotes()
+    {
+        return _notes;
+    }
 
     private int _nextNoteNumber = 1;
     private IMidiOutput _output;
@@ -14,7 +29,12 @@ class Beat
     private int _blackNoteDuration;
     private int _beatDuration;
 
-    private TypeNoteManager _typeNotes;
+    public int GetDuration()
+    {
+        return _beatDuration;
+    }
+
+    public TypeNoteManager _typeNotes;
 
     public void IterateNotes()
     {
@@ -57,7 +77,7 @@ class Beat
 
             _messages.Add(new MIDIMessage(_nextNoteNumber, 0x90, pitch, deltaTime, _output));
 
-            if ((deltaTime + _typeNotes.GetTypes()[typeNote].GetTypeNote()) < _beatDuration)
+            if ((deltaTime + _typeNotes.GetTypes()[typeNote].GetTypeNote()) <= _beatDuration)
             {
                 _messages.Add(new MIDIMessage(_nextNoteNumber, 0x80, pitch, deltaTime + _typeNotes.GetTypes()[typeNote].GetTypeNote(), _output));
             }
@@ -89,20 +109,9 @@ class Beat
     {
         _typeNotes = new TypeNoteManager(blackNoteDuration);
         _output = output;
-        _messages = new List<MIDIMessage>()
-        {
-            new MIDIMessage(1, 0x90, 60, 0, _output),
-            new MIDIMessage(2, 0x90, 64, 0, _output),
-            new MIDIMessage(1, 0x80, 60, 1000, _output),
-            new MIDIMessage(2, 0x80, 64, 1000, _output),
-            new MIDIMessage(3, 0x90, 62, 1000, _output),
-            new MIDIMessage(3, 0x80, 62, 2000, _output),
-            new MIDIMessage(4, 0x90, 64, 2000, _output),
-            new MIDIMessage(4, 0x80, 64, 3000, _output),
-            new MIDIMessage(5, 0x90, 65, 3000, _output),
-            new MIDIMessage(5, 0x80, 65, 4000, _output),
-        };
         _blackNoteDuration = blackNoteDuration;
         _beatDuration = beatDuration;
+        _notes = new List<Note>();
+        _messages = new List<MIDIMessage>();
     }
 }

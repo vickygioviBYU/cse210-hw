@@ -1,8 +1,11 @@
+using Commons.Music.Midi;
+
 class Session
 {
     private Score _score;
     private string _title;
     private string _author;
+    private IMidiOutput _output;
 
     public void SetTitle(string title){
         _title = title;
@@ -18,7 +21,12 @@ class Session
         return _author;
     }
 
+    public Session(IMidiOutput output)
+    {
+        _output = output;
+    }
+
     public void NewScore() {
-        _score = new Score();
+        _score = new Score(_output);
     }
 }
