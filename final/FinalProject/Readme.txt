@@ -34,3 +34,7 @@ Delete Note:
 
 Beat number: beat in which delete the note
 Note number: note to delete
+
+FREQUENTLY ASKED QUESTIONS:
+
+If you cannot view the yellow bar in the bottom of the ScoreUI, resize the window.
